@@ -20,3 +20,9 @@ logging:
   level:
     # 设置 PaymentFeignService 的日志级别（注：不是Controller） copy reference （复制全路径）
     com.atguigu.springcloud.service.PaymentFeignService: debug
+
+
+# feign 中启用hystrix
+feign:
+  hystrix:
+    enabled: true
