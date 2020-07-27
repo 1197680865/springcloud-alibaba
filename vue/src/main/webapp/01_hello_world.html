@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VUE Hello World</title>
+</head>
+<body>
+<div id="app">
+    <h3> {{msg}} </h3>
+    <h3> {{msg + '插值表达式追加数据'}}</h3>
+    <h3> {{user}} </h3>
+    <h3> {{user.name}} </h3>
+    <h3> {{liststr[0]}}</h3>
+    <h3> {{listObj[1].age}}</h3>
+    <h1>------------------------</h1>
+    <h3 v-text="msg"></h3>
+    <h3 v-text="msg + '插值表达式追加数据'"></h3>
+    <h1>------------------------</h1>
+    <h3 v-html="link"></h3>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const  app = new Vue({
+        el: '#app',
+        data:{
+            msg: 'hello world',
+            user: {name: '憨憨' , age: 23},
+            liststr: ['java','python','html'],
+            listObj: [ {name: '憨憨' , age: 23}, {name: '上天' , age: 100}],
+            link: "<a href='http://baidu.com'>hello world v-html</a>"
+        }
+    })
+</script>
+</body>
+</html>
