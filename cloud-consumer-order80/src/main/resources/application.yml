@@ -3,3 +3,12 @@ server:
 
 swagger:
   enable: true
+spring:
+  application:
+    name: cloud-consumer-order80
+  zipkin:
+    base-url: http://192.168.120.18:9411
+  sleuth:
+    sampler:
+#      采样率probability介于 0-1之间，一般为0.5
+      probability: 1

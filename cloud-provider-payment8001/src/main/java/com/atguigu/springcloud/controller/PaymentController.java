@@ -5,7 +5,6 @@ import com.atguigu.springcloud.entity.Payment;
 import com.atguigu.springcloud.service.PaymentService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -48,6 +47,13 @@ public class PaymentController {
         }else {
             return new CommonResult<>(444,"查询失败,无对应记录："+id,null);
         }
+    }
+
+    @GetMapping("get/sleuth")
+    @ApiOperation(value = "测试sleuth",tags = "订单模块")
+    public CommonResult<String> getSleuthTest()
+    {
+       return new CommonResult<>(200,"测试sleuth","哈哈哈哈哈");
     }
 
 }

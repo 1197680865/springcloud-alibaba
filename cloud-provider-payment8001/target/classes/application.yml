@@ -13,6 +13,16 @@ spring:
         UTF-8&useSSL=false&serverTimezone=GMT%2B8
     username: root
     password: 123456
+
+
+# http://192.168.120.18:9411 访问此网址会出现zipkin的面板
+  zipkin:
+    base-url: http://192.168.120.18:9411
+  sleuth:
+    sampler:
+      #      采样率probability介于 0-1之间，一般为0.5
+      probability: 1
+
 mybatis:
   mapper-locations: classpath*:mapper/*.xml
   type-aliases-package: com.atguigu.springcloud.entity

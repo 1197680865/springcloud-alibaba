@@ -31,4 +31,11 @@ public class OrderController {
         return  restTemplate.getForObject(PAYMENT_URL + "/payment/get/"+id,CommonResult.class);
 
     }
+
+    @GetMapping("get/sleuth")
+    @ApiOperation(value = "测试sleuth",tags = "订单模块")
+    public CommonResult<String> getSleuthTest()
+    {
+        return restTemplate.getForObject(PAYMENT_URL + "/payment/get/sleuth",CommonResult.class);
+    }
 }
