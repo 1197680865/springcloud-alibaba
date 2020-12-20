@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    # 当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    # mysql驱动类
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/db2020?useUnicode=true&characterEncoding=
+      UTF-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  zipkin:
+    base-url: http://192.168.120.18:9411
+  sleuth:
+    sampler:
+      #      采样率probability介于 0-1之间，一般为0.5
+      probability: 1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# 本服务调用的消费端
+service-url:
+  alibaba-pay: http://alibaba-pay
+
+config:
+  info: "nacos config ,test version 1.3"

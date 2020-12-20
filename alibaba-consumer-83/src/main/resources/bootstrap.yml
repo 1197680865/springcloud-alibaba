@@ -1,0 +1,24 @@
+
+# bootstrap 的优先级大于application
+# 在 Nacos Spring Cloud 中，dataId 的完整格式如下： ${prefix}-${spring.profiles.active}.${file-extension}
+# 此处dataId = alibaba-consumer-dev.yaml
+server:
+  port: 83
+
+spring:
+  application:
+    name: alibaba-consumer
+  profiles:
+#    active: dev #默认命名空间、默认分组下的 dataId = alibaba-consumer-dev.yaml
+    active: test #默认命名空间、默认分组下的 dataId = alibaba-consumer-test.yaml
+  cloud:
+    nacos:
+      discovery:
+        enabled: true #如果不想使用 Nacos 作为您的服务注册与发现，可以将 spring.cloud.nacos.discovery.enabled 设置为 false。
+        server-addr: 127.0.0.1:8848
+      config:
+        enabled: true
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+        group: DEFAULT_GROUP # group分组方案，group指定相关的组，
+        #namespace: # namespace，namespace指定相关的组，一般使用默认的

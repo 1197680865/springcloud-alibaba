@@ -18,6 +18,8 @@
     <module>cloud-provider-oauth2</module>
       <module>vue</module>
     <module>cloud-gateway-9527</module>
+    <module>alibaba-pay-9001</module>
+      <module>alibaba-consumer-83</module>
   </modules>
 
   <packaging>pom</packaging>
